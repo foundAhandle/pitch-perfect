@@ -57,10 +57,10 @@
                                 <exclude reference="cAS-Pq-eQf"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KcA-eM-HLg"/>
-                                <exclude reference="Kkw-U6-ybf"/>
                                 <exclude reference="kQf-Bs-zRz"/>
                                 <exclude reference="zLN-iI-tA0"/>
+                                <exclude reference="KcA-eM-HLg"/>
+                                <exclude reference="Kkw-U6-ybf"/>
                                 <exclude reference="bBI-we-MXT"/>
                                 <exclude reference="wtv-5l-QMS"/>
                             </mask>
@@ -72,10 +72,10 @@
                                 <include reference="cAS-Pq-eQf"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="KcA-eM-HLg"/>
-                                <include reference="Kkw-U6-ybf"/>
                                 <include reference="kQf-Bs-zRz"/>
                                 <include reference="zLN-iI-tA0"/>
+                                <include reference="KcA-eM-HLg"/>
+                                <include reference="Kkw-U6-ybf"/>
                                 <include reference="bBI-we-MXT"/>
                                 <include reference="wtv-5l-QMS"/>
                             </mask>
