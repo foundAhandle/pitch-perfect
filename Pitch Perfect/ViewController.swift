@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var recordingInProgress: UILabel!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +24,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        stopButton.hidden = true;
+        recordButton.enabled = true
+    }
+
     @IBAction func recordAudio(sender: UIButton) {
-        //TODO:
+        recordButton.enabled = false
+        stopButton.hidden = false
         recordingInProgress.hidden = false
         println("t")
     }
@@ -31,4 +39,3 @@ class ViewController: UIViewController {
     @IBAction func stopAudio(sender: UIButton) {
     }
 }
-

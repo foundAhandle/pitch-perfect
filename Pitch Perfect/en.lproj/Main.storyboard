@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wCh-dH-29P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Record-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,27 +38,8 @@
                                 </state>
                                 <connections>
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VHf-FF-C8M"/>
-                                    <segue destination="web-yf-uKd" kind="show" id="Rls-S6-bab"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muG-ci-aek">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="279" y="13" width="42" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22A-sB-dw5">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="13" width="42" height="21"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.36223989010000002" blue="0.21019821080000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -74,8 +55,6 @@
                                 <exclude reference="Ibt-Y3-Pwv"/>
                                 <exclude reference="Zj6-bM-u9b"/>
                                 <exclude reference="cAS-Pq-eQf"/>
-                                <exclude reference="muG-ci-aek"/>
-                                <exclude reference="22A-sB-dw5"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="kQf-Bs-zRz"/>
@@ -91,8 +70,6 @@
                                 <include reference="Ibt-Y3-Pwv"/>
                                 <include reference="Zj6-bM-u9b"/>
                                 <include reference="cAS-Pq-eQf"/>
-                                <include reference="muG-ci-aek"/>
-                                <include reference="22A-sB-dw5"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="kQf-Bs-zRz"/>
@@ -104,51 +81,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Record" id="y7P-yS-55J"/>
                     <connections>
-                        <outlet property="recordButton" destination="Ibt-Y3-Pwv" id="qLo-9V-4sQ"/>
                         <outlet property="recordingInProgress" destination="Zj6-bM-u9b" id="OBf-Aw-t7K"/>
-                        <outlet property="stopButton" destination="cAS-Pq-eQf" id="mK5-dM-IZz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141.5" y="894"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gxD-jL-1U7">
-            <objects>
-                <viewController id="web-yf-uKd" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Lh-og-8iE"/>
-                        <viewControllerLayoutGuide type="bottom" id="7x2-8v-y6m"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IRd-nS-OtL">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fqj-Pe-z8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1984.5" y="894"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="vSW-uC-RA0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wCh-dH-29P" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lo3-HH-oAY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="hcz-up-eAU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Nj-Dr-ld1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="343.5" y="894"/>
+            <point key="canvasLocation" x="365" y="150"/>
         </scene>
     </scenes>
     <resources>
