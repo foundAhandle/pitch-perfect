@@ -9,7 +9,7 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -40,7 +40,6 @@
                                 </state>
                                 <connections>
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VHf-FF-C8M"/>
-                                    <segue destination="web-yf-uKd" kind="show" id="Rls-S6-bab"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muG-ci-aek">
@@ -111,6 +110,7 @@
                         <outlet property="recordButton" destination="Ibt-Y3-Pwv" id="qLo-9V-4sQ"/>
                         <outlet property="recordingInProgress" destination="Zj6-bM-u9b" id="OBf-Aw-t7K"/>
                         <outlet property="stopButton" destination="cAS-Pq-eQf" id="mK5-dM-IZz"/>
+                        <segue destination="web-yf-uKd" kind="show" identifier="stopRecording" id="nS4-lx-tDE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -156,14 +156,36 @@
                                     <action selector="playFastAudio:" destination="web-yf-uKd" eventType="touchUpInside" id="p5d-rw-mK0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnf-f6-XKf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="chipmunk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playChipmunkAudio:" destination="web-yf-uKd" eventType="touchUpInside" id="B7p-rY-PHl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsS-1V-BAX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="darthvader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playDarthvaderAudio:" destination="web-yf-uKd" eventType="touchUpInside" id="u5b-aR-ztW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cnf-f6-XKf" firstAttribute="leading" secondItem="IRd-nS-OtL" secondAttribute="leadingMargin" id="1N2-HE-boD"/>
                             <constraint firstItem="pl3-N1-fAV" firstAttribute="centerX" secondItem="IRd-nS-OtL" secondAttribute="centerX" id="5hg-MO-giF"/>
-                            <constraint firstItem="omR-Rw-M7W" firstAttribute="trailing" secondItem="IRd-nS-OtL" secondAttribute="trailingMargin" id="HbE-D2-jpz"/>
-                            <constraint firstItem="omR-Rw-M7W" firstAttribute="top" secondItem="8KC-jO-TlW" secondAttribute="top" id="Zyc-EB-EFw"/>
-                            <constraint firstItem="8KC-jO-TlW" firstAttribute="leading" secondItem="IRd-nS-OtL" secondAttribute="leadingMargin" id="a6p-Aj-cgC"/>
+                            <constraint firstItem="8KC-jO-TlW" firstAttribute="leading" secondItem="IRd-nS-OtL" secondAttribute="leadingMargin" id="RDd-2K-5tn"/>
+                            <constraint firstItem="omR-Rw-M7W" firstAttribute="top" secondItem="1Lh-og-8iE" secondAttribute="bottom" constant="50" id="Yns-HR-jVL"/>
+                            <constraint firstItem="jsS-1V-BAX" firstAttribute="top" secondItem="1Lh-og-8iE" secondAttribute="bottom" constant="210" id="aCg-e7-c09"/>
+                            <constraint firstItem="omR-Rw-M7W" firstAttribute="trailing" secondItem="IRd-nS-OtL" secondAttribute="trailingMargin" id="h4O-p0-7BM"/>
+                            <constraint firstItem="cnf-f6-XKf" firstAttribute="top" secondItem="1Lh-og-8iE" secondAttribute="bottom" constant="210" id="lTh-Gr-QJh"/>
                             <constraint firstItem="7x2-8v-y6m" firstAttribute="top" secondItem="pl3-N1-fAV" secondAttribute="bottom" constant="50" id="mKa-R8-OTd"/>
+                            <constraint firstItem="jsS-1V-BAX" firstAttribute="trailing" secondItem="IRd-nS-OtL" secondAttribute="trailingMargin" id="nD6-67-uDh"/>
                             <constraint firstItem="8KC-jO-TlW" firstAttribute="top" secondItem="1Lh-og-8iE" secondAttribute="bottom" constant="50" id="uSs-Ro-wD6"/>
                         </constraints>
                         <variation key="default">
@@ -171,13 +193,19 @@
                                 <exclude reference="8KC-jO-TlW"/>
                                 <exclude reference="pl3-N1-fAV"/>
                                 <exclude reference="omR-Rw-M7W"/>
+                                <exclude reference="cnf-f6-XKf"/>
+                                <exclude reference="jsS-1V-BAX"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="mKa-R8-OTd"/>
-                                <exclude reference="a6p-Aj-cgC"/>
+                                <exclude reference="RDd-2K-5tn"/>
                                 <exclude reference="uSs-Ro-wD6"/>
-                                <exclude reference="HbE-D2-jpz"/>
-                                <exclude reference="Zyc-EB-EFw"/>
+                                <exclude reference="1N2-HE-boD"/>
+                                <exclude reference="lTh-Gr-QJh"/>
+                                <exclude reference="aCg-e7-c09"/>
+                                <exclude reference="nD6-67-uDh"/>
+                                <exclude reference="Yns-HR-jVL"/>
+                                <exclude reference="h4O-p0-7BM"/>
                                 <exclude reference="5hg-MO-giF"/>
                             </mask>
                         </variation>
@@ -186,13 +214,19 @@
                                 <include reference="8KC-jO-TlW"/>
                                 <include reference="pl3-N1-fAV"/>
                                 <include reference="omR-Rw-M7W"/>
+                                <include reference="cnf-f6-XKf"/>
+                                <include reference="jsS-1V-BAX"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="mKa-R8-OTd"/>
-                                <include reference="a6p-Aj-cgC"/>
+                                <include reference="RDd-2K-5tn"/>
                                 <include reference="uSs-Ro-wD6"/>
-                                <include reference="HbE-D2-jpz"/>
-                                <include reference="Zyc-EB-EFw"/>
+                                <include reference="1N2-HE-boD"/>
+                                <include reference="lTh-Gr-QJh"/>
+                                <include reference="aCg-e7-c09"/>
+                                <include reference="nD6-67-uDh"/>
+                                <include reference="Yns-HR-jVL"/>
+                                <include reference="h4O-p0-7BM"/>
                                 <include reference="5hg-MO-giF"/>
                             </mask>
                         </variation>
@@ -222,6 +256,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk" width="100" height="100"/>
+        <image name="darthvader" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
