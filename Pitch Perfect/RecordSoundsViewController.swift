@@ -11,7 +11,7 @@ import AVFoundation
 
 class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
 
-    @IBOutlet weak var recordingInProgress: UILabel!
+    @IBOutlet weak var instructions: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
@@ -29,14 +29,15 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     }
 
     override func viewWillAppear(animated: Bool) {
-        stopButton.hidden = true;
+        stopButton.hidden = true
         recordButton.enabled = true
+        instructions.text = "Tap to Record"
     }
 
     @IBAction func recordAudio(sender: UIButton) {
         recordButton.enabled = false
         stopButton.hidden = false
-        recordingInProgress.hidden = false
+        instructions.text = "Recording in Progress"
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
 
@@ -61,6 +62,7 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if(flag){
             recordedAudio = RecordedAudio()
+            recordedAudio.constructor()
             recordedAudio.filePathUrl = recorder.url
             recordedAudio.title = recorder.url.lastPathComponent
             
@@ -83,7 +85,6 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     }
     
     @IBAction func stopAudio(sender: UIButton) {
-        recordingInProgress.hidden = true
         audioRecorder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
