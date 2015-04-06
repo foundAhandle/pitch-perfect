@@ -39,7 +39,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5d-1N-3VW">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -59,10 +59,10 @@
                                 <exclude reference="h5d-1N-3VW"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KcA-eM-HLg"/>
-                                <exclude reference="Kkw-U6-ybf"/>
                                 <exclude reference="Y2Q-Ru-F9f"/>
                                 <exclude reference="fwa-yU-A26"/>
+                                <exclude reference="KcA-eM-HLg"/>
+                                <exclude reference="Kkw-U6-ybf"/>
                                 <exclude reference="bBI-we-MXT"/>
                                 <exclude reference="wtv-5l-QMS"/>
                             </mask>
@@ -74,10 +74,10 @@
                                 <include reference="h5d-1N-3VW"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="KcA-eM-HLg"/>
-                                <include reference="Kkw-U6-ybf"/>
                                 <include reference="Y2Q-Ru-F9f"/>
                                 <include reference="fwa-yU-A26"/>
+                                <include reference="KcA-eM-HLg"/>
+                                <include reference="Kkw-U6-ybf"/>
                                 <include reference="bBI-we-MXT"/>
                                 <include reference="wtv-5l-QMS"/>
                             </mask>
